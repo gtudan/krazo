@@ -22,4 +22,11 @@
     <!-- For Arquillian -->
     <applicationMonitor updateTrigger="mbean"/>
 
+    <quickStartSecurity userName="admin" userPassword="admin" />
+    <keyStore id="defaultKeyStore" password="password" />
+
+    <remoteFileAccess>
+        <writeDir>${server.config.dir}/dropins</writeDir>
+    </remoteFileAccess>
+
 </server>

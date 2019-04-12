@@ -44,4 +44,14 @@
         </configuration>
     </container>
 
+    <container qualifier="liberty">
+        <configuration>
+            <property name="hostName">localhost</property>
+            <property name="serverName">defaultServer</property>
+            <property name="username">admin</property>
+            <property name="password">admin</property>
+            <property name="httpPort">9080</property>
+            <property name="httpsPort">9443</property>
+        </configuration>
+    </container>
 </arquillian>

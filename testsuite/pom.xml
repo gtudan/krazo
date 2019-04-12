@@ -251,6 +251,36 @@
                             <systemProperties>
                                 <arquillian.launch>payara</arquillian.launch>
                                 <testsuite.profile>testsuite-payara</testsuite.profile>
+                            </systemProperties>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>testsuite-liberty</id>
+
+            <properties>
+                <skipITs>false</skipITs>
+            </properties>
+
+            <dependencies>
+                <dependency>
+                    <groupId>io.openliberty.arquillian</groupId>
+                    <artifactId>arquillian-liberty-remote</artifactId>
+                    <version>1.0.0</version>
+                </dependency>
+            </dependencies>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <configuration>
+                            <skipITs>false</skipITs>
+                            <systemProperties>
+                                <arquillian.launch>liberty</arquillian.launch>
+                                <testsuite.profile>testsuite-liberty</testsuite.profile>
                                 <javax.net.ssl.trustStore>src/test/resources/payara-truststore.jks
                                 </javax.net.ssl.trustStore>
                                 <javax.net.ssl.trustStorePassword>changeit</javax.net.ssl.trustStorePassword>
