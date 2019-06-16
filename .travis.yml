@@ -44,6 +44,9 @@ jobs:
     - stage: test
       env: TYPE=tck-liberty
       script: .travis/tests.sh ${TYPE}
+    - stage: test
+      env: TYPE=dependency-check
+      script: mvn org.owasp:dependency-check-maven:aggregate
   allow_failures:
     - env: TYPE=tck-glassfish51-vanilla
     - env: TYPE=tck-wildfly16-vanilla
