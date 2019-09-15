@@ -41,8 +41,9 @@ public class CsrfController {
 
     @POST
     @CsrfProtected
-    public String postForm(@FormParam("greeting") String greeting) {
-        return "redirect:/csrf/ok";
+    @View("redirect:/csrf/ok")
+    public void postForm(@FormParam("greeting") String greeting) {
+
     }
 
     @GET
